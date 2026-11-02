@@ -16,6 +16,102 @@ function updateButton() {
         : "☀️ Light Mode";
 }
 
+
+// Select HTML elements
+
+const courseButtons = document.querySelectorAll(".view-btn");
+
+const courseDialog = document.getElementById("courseDialog");
+
+const dialogTitle = document.getElementById("dialogTitle");
+
+const dialogDescription = document.getElementById("dialogDescription");
+
+const completeBtn = document.getElementById("completeBtn");
+
+const closeBtn = document.getElementById("closeBtn");
+
+const progressFill = document.querySelector(".progress-fill");
+
+const learningStatus = document.getElementById("learningStatus");
+
+
+// Store completed courses
+
+const completedCourses = new Set();
+
+let selectedCourse = "";
+
+
+// Open course details
+
+courseButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        selectedCourse = button.dataset.course;
+
+        dialogTitle.textContent = selectedCourse;
+
+        dialogDescription.textContent = button.dataset.description;
+
+        completeBtn.disabled = completedCourses.has(selectedCourse);
+
+        completeBtn.textContent = completeBtn.disabled
+            ? "Already Completed"
+            : "Mark as Completed";
+
+        courseDialog.showModal();
+
+    });
+
+});
+
+
+// Complete selected course
+
+completeBtn.addEventListener("click", function () {
+
+    if (!selectedCourse) return;
+
+    completedCourses.add(selectedCourse);
+
+    updateProgress();
+
+    completeBtn.disabled = true;
+
+    completeBtn.textContent = "Completed ✓";
+
+});
+
+
+// Close modal
+
+closeBtn.addEventListener("click", function () {
+
+    courseDialog.close();
+
+});
+
+
+// Update learning progress
+
+function updateProgress() {
+
+    const totalCourses = courseButtons.length;
+
+    const completed = completedCourses.size;
+
+    const percentage = (completed / totalCourses) * 100;
+
+    progressFill.style.width = percentage + "%";
+
+    learningStatus.textContent =
+        completed + " of " + totalCourses + " courses completed";
+
+}
+
+
 if (themeToggle) {
     themeToggle.addEventListener("click", function () {
         body.classList.toggle("light-theme");
