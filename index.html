@@ -54,7 +54,9 @@
             <div class="progress-track">
                 <div class="progress-fill"></div>
             </div>
-            <small>Ready to learn?</small>
+            <small id="learningStatus">
+                0 of 3 courses completed
+            </small>
         </div>
 
     </main>
@@ -100,7 +102,23 @@
     <footer>
         <p>© 2026 DevPath. Built for future developers.</p>
     </footer>
+    <dialog id="courseDialog" class="course-dialog">
 
+        <h2 id="dialogTitle">Course Name</h2>
+
+        <p id="dialogDescription">
+            Course description goes here.
+        </p>
+
+        <button id="completeBtn" class="view-btn">
+            Mark as Completed
+        </button>
+
+        <button id="closeBtn" class="close-btn">
+            Close
+        </button>
+
+    </dialog>
     <script src="js/app.js"></script>
 
 </body>
