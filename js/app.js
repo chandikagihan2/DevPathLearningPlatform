@@ -17,8 +17,6 @@ function updateButton() {
 }
 
 
-// Select HTML elements
-
 const courseButtons = document.querySelectorAll(".view-btn");
 
 const courseDialog = document.getElementById("courseDialog");
@@ -36,14 +34,10 @@ const progressFill = document.querySelector(".progress-fill");
 const learningStatus = document.getElementById("learningStatus");
 
 
-// Store completed courses
-
 const completedCourses = new Set();
 
 let selectedCourse = "";
 
-
-// Open course details
 
 courseButtons.forEach(function (button) {
 
@@ -68,8 +62,6 @@ courseButtons.forEach(function (button) {
 });
 
 
-// Complete selected course
-
 completeBtn.addEventListener("click", function () {
 
     if (!selectedCourse) return;
@@ -83,9 +75,7 @@ completeBtn.addEventListener("click", function () {
     completeBtn.textContent = "Completed ✓";
 
 });
-
-
-// Close modal
+l
 
 closeBtn.addEventListener("click", function () {
 
@@ -93,8 +83,6 @@ closeBtn.addEventListener("click", function () {
 
 });
 
-
-// Update learning progress
 
 function updateProgress() {
 

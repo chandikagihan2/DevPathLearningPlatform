@@ -1,5 +1,3 @@
-/* 1. Global Settings */
-
 * {
     margin: 0;
     padding: 0;
@@ -22,8 +20,6 @@ body {
     transition: 0.3s;
 }
 
-/* 2. Light Theme */
-
 body.light-theme {
     --bg: #f3f6fb;
     --surface: #ffffff;
@@ -32,8 +28,6 @@ body.light-theme {
     --accent: #087db5;
     --border: #dce3ec;
 }
-
-/* 3. Navigation */
 
 .navbar {
     display: flex;
@@ -73,8 +67,6 @@ nav a {
     color: var(--text);
     cursor: pointer;
 }
-
-/* 4. Hero Section */
 
 .hero {
     min-height: 480px;
@@ -118,8 +110,6 @@ nav a {
     border-radius: 8px;
 }
 
-/* 5. Hero Card */
-
 .hero-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -153,8 +143,6 @@ nav a {
     background: var(--accent);
     border-radius: 20px;
 }
-
-/* 6. Courses */
 
 .courses {
     padding: 65px 10%;
@@ -192,16 +180,12 @@ nav a {
     line-height: 1.6;
 }
 
-/* 7. Footer */
-
 footer {
     text-align: center;
     padding: 25px;
     color: var(--muted);
     border-top: 1px solid var(--border);
 }
-
-/* 8. Responsive Design */
 
 @media (max-width: 768px) {
 
@@ -231,8 +215,6 @@ footer {
     }
 }
 
-/* Course Buttons */
-
 .view-btn {
     margin-top: 20px;
     padding: 11px 18px;
@@ -247,8 +229,6 @@ footer {
 .view-btn:hover {
     opacity: 0.8;
 }
-
-/* Course Details Modal */
 
 .course-dialog {
     background: var(--surface);
